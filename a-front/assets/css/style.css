@@ -1,0 +1,412 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f5f7;
+    color: #222;
+    line-height: 1.5;
+}
+
+header {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+main {
+    width: min(100%, 1000px);
+    margin: 30px auto;
+    padding: 0 16px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.section-block {
+    border: 1px solid #e3e5e8;
+    border-radius: 12px;
+    padding: 18px;
+    background: #fafbfc;
+}
+
+.section-block h3 {
+    margin-bottom: 14px;
+    font-size: 1.1rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.grid {
+    display: grid;
+    gap: 16px;
+}
+
+.two-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+label {
+    font-weight: 700;
+    font-size: 0.96rem;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cfd5dd;
+    border-radius: 8px;
+    background: white;
+    font-size: 15px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+    border-color: #dc2626 !important;
+    background: #fff1f2;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08);
+}
+
+.field.invalid label {
+    color: #b91c1c;
+}
+
+.choice-item.invalid {
+    border-color: #dc2626;
+    background: #fff1f2;
+}
+
+.bmi-box {
+    margin-top: 18px;
+    padding: 14px 16px;
+    border: 1px solid #dfe3e8;
+    border-radius: 10px;
+    background: #f8fafc;
+}
+
+.bmi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.bmi-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111;
+}
+
+.bmi-status {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.bmi-details {
+    border: 1px solid #dfe3e8;
+    border-radius: 10px;
+    background: #fff;
+    padding: 10px 14px;
+}
+
+.bmi-details summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: #111;
+}
+
+.table-wrap {
+    margin-top: 12px;
+    overflow-x: auto;
+}
+
+.bmi-details table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.94rem;
+}
+
+.bmi-details th,
+.bmi-details td {
+    border: 1px solid #dfe3e8;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+.bmi-details th {
+    background: #f4f5f7;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #111;
+    box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.08);
+}
+
+.choice-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 12px;
+}
+
+.inline-radio {
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.choice-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border: 1px solid #dfe3e8;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    font-weight: 600;
+    color: #2a2f36;
+}
+
+.choice-item input {
+    width: auto;
+    accent-color: #111;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 12px;
+}
+
+.small-note {
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #666;
+    font-size: 0.88rem;
+}
+
+.conditional-fields {
+    display: none;
+    margin-top: 16px;
+    padding-top: 8px;
+}
+
+.conditional-fields.visible {
+    display: block;
+}
+
+.hidden-group {
+    display: none;
+    margin-top: 12px;
+}
+
+.hidden-group.visible {
+    display: block;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #111;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #333;
+    transform: translateY(-1px);
+}
+
+button.secondary {
+    background: #f0f0f0;
+    color: #111;
+    border: 1px solid #d8d8d8;
+}
+
+button.secondary:hover {
+    background: #e6e6e6;
+}
+
+.top-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+    backdrop-filter: blur(6px);
+}
+
+.top-nav a,
+.top-nav button,
+.inline-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: #f3f4f6;
+    color: #111827;
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid transparent;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+.top-nav a:hover,
+.top-nav button:hover,
+.inline-link:hover {
+    background: #e5e7eb;
+    border-color: #d1d5db;
+    transform: none;
+}
+
+.top-nav a.active {
+    background: #111827;
+    color: #fff;
+    border-color: #111827;
+    box-shadow: 0 6px 18px rgba(17, 24, 39, 0.15);
+}
+
+.top-nav button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.result-card {
+    min-height: 200px;
+}
+
+.recommendation {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 18px;
+    margin-top: 15px;
+}
+
+.recommendation h3 {
+    margin-bottom: 8px;
+}
+
+.score {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.empty {
+    text-align: center;
+    color: #666;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+}
+
+@media (max-width: 640px) {
+    .two-col,
+    .choice-group,
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 18px;
+    }
+}
+
+.plan {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed #ddd;
+}
+
+.plan details {
+    margin-top: 10px;
+    border: 1px solid #e3e5e8;
+    border-radius: 8px;
+    padding: 10px 14px;
+    background: #fafbfc;
+}
+
+.plan summary {
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.plan ul {
+    margin: 10px 0 0 20px;
+}
+
+.plan li {
+    margin-bottom: 6px;
+    color: #333;
+}

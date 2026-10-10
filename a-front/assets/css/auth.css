@@ -1,0 +1,268 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f5f7;
+    color: #222;
+}
+
+/* ---------- Layout dua kolom ---------- */
+
+.auth-page {
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+    min-height: 100vh;
+}
+
+.auth-brand {
+    background: #111;
+    color: white;
+    padding: 60px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.brand-mark {
+    margin-bottom: 10px;
+}
+
+.brand-badge {
+    display: inline-block;
+    font-size: 49.3px;
+    line-height: 0.7;
+    letter-spacing: -1px;
+    font-weight: 800;
+    color: #fff;
+    position: relative;
+}
+
+.brand-badge::after {
+    content: "";
+    display: block;
+    width: 245px;
+    height: 4px;
+    margin-top: 16px;
+    border-radius: 1px;
+    background: linear-gradient(90deg, #ffffff 0%, #d7d7d7 100%);
+}
+
+.brand-motto {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.095em;
+    text-transform: uppercase;
+    color: #d4d4d4;
+    margin: 0 0 16px;
+}
+
+.brand-text {
+    max-width: 38ch;
+    line-height: 1.6;
+    color: #f0f0f0;
+    font-size: 1.02rem;
+}
+
+.auth-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+}
+
+.auth-box {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* ---------- Tab ---------- */
+
+.tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 28px;
+}
+
+.tab {
+    background: none;
+    border: none;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+}
+
+.tab:hover {
+    color: #222;
+}
+
+.tab.active {
+    color: #111;
+    border-bottom-color: #111;
+}
+
+/* ---------- Form ---------- */
+
+.auth-form h2 {
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.field {
+    margin-top: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+    background: white;
+}
+
+input.invalid {
+    border-color: #c0392b;
+}
+
+.error {
+    display: block;
+    min-height: 18px;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #c0392b;
+}
+
+.password-wrap {
+    position: relative;
+}
+
+.password-wrap input {
+    padding-right: 92px;
+}
+
+.toggle-pw {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 6px 8px;
+    font-size: 13px;
+    color: #555;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.toggle-pw:hover {
+    color: #111;
+    background: #eee;
+}
+
+.form-message {
+    min-height: 20px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #c0392b;
+}
+
+.form-message.success {
+    color: #1e7e46;
+}
+
+.submit {
+    width: 100%;
+    margin-top: 8px;
+    padding: 13px;
+    border: none;
+    border-radius: 7px;
+    background: #111;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background: #333;
+}
+
+.submit:disabled {
+    background: #888;
+    cursor: wait;
+}
+
+.switch-text {
+    margin-top: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+.link-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    font-weight: bold;
+    color: #111;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* ---------- Fokus keyboard ---------- */
+
+input:focus-visible,
+button:focus-visible {
+    outline: 3px solid #4a90e2;
+    outline-offset: 2px;
+}
+
+input:focus {
+    border-color: #111;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 800px) {
+
+    .auth-page {
+        grid-template-columns: 1fr;
+        min-height: 0;
+    }
+
+    .auth-brand {
+        padding: 32px 24px;
+    }
+
+    .auth-brand h1 {
+        font-size: 34px;
+        margin-bottom: 10px;
+    }
+
+    .brand-text {
+        font-size: 14px;
+    }
+
+    .auth-panel {
+        padding: 28px 20px 48px;
+    }
+}

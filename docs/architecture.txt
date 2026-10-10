@@ -1,0 +1,28 @@
+TFE_exe/
+├── a-front/
+│   ├── app.js
+│   ├── assets/
+│   │   ├── css/
+│   │   ├── js/
+│   │   └── images/
+│   └── pages/
+│       ├── login/
+│       └── asesmen/
+├── b-back/
+│   ├── api/
+│   ├── config/
+│   ├── controllers/
+│   ├── models/
+│   ├── services/
+│   ├── utils/
+│   ├── middleware/
+│   ├── server.py
+│   ├── requirements.txt
+│   └── .env.example
+├── database/
+├── docs/
+├── tests/
+├── index.html
+├── README.md
+├── .gitignore
+└── .env.example

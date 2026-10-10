@@ -1,0 +1,345 @@
+{
+  "blocks": {
+    "full_body": {
+      "label": "Full-body",
+      "days": 1,
+      "muscles": [
+        "chest",
+        "back",
+        "shoulders",
+        "quads",
+        "hamstrings",
+        "glutes",
+        "core"
+      ],
+      "slots": [
+        {
+          "muscle": "quads",
+          "main": 1,
+          "acc": 0
+        },
+        {
+          "muscle": "chest",
+          "main": 1,
+          "acc": 0
+        },
+        {
+          "muscle": "back",
+          "main": 1,
+          "acc": 0
+        },
+        {
+          "muscle": "hamstrings",
+          "main": 1,
+          "acc": 0
+        },
+        {
+          "muscle": "shoulders",
+          "main": 1,
+          "acc": 0
+        },
+        {
+          "muscle": "glutes",
+          "main": 0,
+          "acc": 1
+        },
+        {
+          "muscle": "core",
+          "main": 0,
+          "acc": 1
+        }
+      ]
+    },
+    "upper": {
+      "label": "Upper",
+      "days": 1,
+      "muscles": [
+        "chest",
+        "back",
+        "shoulders",
+        "biceps",
+        "triceps"
+      ],
+      "slots": [
+        {
+          "muscle": "chest",
+          "main": 1,
+          "acc": 1
+        },
+        {
+          "muscle": "back",
+          "main": 2,
+          "acc": 0
+        },
+        {
+          "muscle": "shoulders",
+          "main": 1,
+          "acc": 1
+        },
+        {
+          "muscle": "biceps",
+          "main": 0,
+          "acc": 1
+        },
+        {
+          "muscle": "triceps",
+          "main": 0,
+          "acc": 1
+        }
+      ]
+    },
+    "lower": {
+      "label": "Lower",
+      "days": 1,
+      "muscles": [
+        "quads",
+        "hamstrings",
+        "glutes",
+        "calves"
+      ],
+      "slots": [
+        {
+          "muscle": "quads",
+          "main": 2,
+          "acc": 0
+        },
+        {
+          "muscle": "hamstrings",
+          "main": 1,
+          "acc": 1
+        },
+        {
+          "muscle": "glutes",
+          "main": 1,
+          "acc": 0
+        },
+        {
+          "muscle": "calves",
+          "main": 0,
+          "acc": 1
+        },
+        {
+          "muscle": "core",
+          "main": 0,
+          "acc": 1
+        }
+      ]
+    },
+    "push": {
+      "label": "Push",
+      "days": 1,
+      "muscles": [
+        "chest",
+        "shoulders",
+        "triceps"
+      ],
+      "slots": [
+        {
+          "muscle": "chest",
+          "main": 2,
+          "acc": 1
+        },
+        {
+          "muscle": "shoulders",
+          "main": 1,
+          "acc": 1
+        },
+        {
+          "muscle": "triceps",
+          "main": 0,
+          "acc": 2
+        }
+      ]
+    },
+    "pull": {
+      "label": "Pull",
+      "days": 1,
+      "muscles": [
+        "back",
+        "biceps",
+        "shoulders(rear)"
+      ],
+      "slots": [
+        {
+          "muscle": "back",
+          "main": 3,
+          "acc": 1
+        },
+        {
+          "muscle": "shoulders",
+          "main": 0,
+          "acc": 1
+        },
+        {
+          "muscle": "biceps",
+          "main": 0,
+          "acc": 2
+        }
+      ]
+    },
+    "legs": {
+      "label": "Legs",
+      "days": 1,
+      "muscles": [
+        "quads",
+        "hamstrings",
+        "glutes",
+        "calves"
+      ],
+      "slots": [
+        {
+          "muscle": "quads",
+          "main": 2,
+          "acc": 1
+        },
+        {
+          "muscle": "hamstrings",
+          "main": 1,
+          "acc": 1
+        },
+        {
+          "muscle": "glutes",
+          "main": 1,
+          "acc": 0
+        },
+        {
+          "muscle": "calves",
+          "main": 0,
+          "acc": 1
+        }
+      ]
+    },
+    "chest": {
+      "label": "Chest",
+      "days": 1,
+      "muscles": [
+        "chest"
+      ],
+      "slots": [
+        {
+          "muscle": "chest",
+          "main": 3,
+          "acc": 2
+        }
+      ]
+    },
+    "back": {
+      "label": "Back",
+      "days": 1,
+      "muscles": [
+        "back"
+      ],
+      "slots": [
+        {
+          "muscle": "back",
+          "main": 4,
+          "acc": 2
+        }
+      ]
+    },
+    "shoulders_arms": {
+      "label": "Shoulders & Arms",
+      "days": 1,
+      "muscles": [
+        "shoulders",
+        "biceps",
+        "triceps"
+      ],
+      "slots": [
+        {
+          "muscle": "shoulders",
+          "main": 1,
+          "acc": 2
+        },
+        {
+          "muscle": "biceps",
+          "main": 0,
+          "acc": 2
+        },
+        {
+          "muscle": "triceps",
+          "main": 1,
+          "acc": 1
+        }
+      ]
+    },
+    "glutes": {
+      "label": "Glutes",
+      "days": 1,
+      "muscles": [
+        "glutes"
+      ],
+      "slots": [
+        {
+          "muscle": "glutes",
+          "main": 2,
+          "acc": 2
+        },
+        {
+          "muscle": "hamstrings",
+          "main": 1,
+          "acc": 0
+        }
+      ]
+    },
+    "quads_hams": {
+      "label": "Quadriceps & Hamstrings",
+      "days": 1,
+      "muscles": [
+        "quads",
+        "hamstrings"
+      ],
+      "slots": [
+        {
+          "muscle": "quads",
+          "main": 2,
+          "acc": 1
+        },
+        {
+          "muscle": "hamstrings",
+          "main": 1,
+          "acc": 2
+        },
+        {
+          "muscle": "calves",
+          "main": 0,
+          "acc": 1
+        }
+      ]
+    },
+    "core": {
+      "label": "Core",
+      "days": 1,
+      "muscles": [
+        "core"
+      ],
+      "slots": [
+        {
+          "muscle": "core",
+          "main": 0,
+          "acc": 5
+        }
+      ]
+    }
+  },
+  "bundles": {
+    "upper_lower": {
+      "label": "Upper-Lower",
+      "days": 2,
+      "blocks": [
+        "upper",
+        "lower"
+      ]
+    },
+    "ppl": {
+      "label": "Push-Pull-Legs",
+      "days": 3,
+      "blocks": [
+        "push",
+        "pull",
+        "legs"
+      ]
+    }
+  },
+  "_catatan": "slots = urutan prioritas; generator mengisi dari atas sampai waktu sesi penuh. main = latihan role main, acc = role accessory/core."
+}

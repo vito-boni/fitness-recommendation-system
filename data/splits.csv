@@ -1,0 +1,116 @@
+program_code,day_no,session_name
+P01,1,Full Body
+P02,1,Full Body
+P02,2,Full Body B
+P03,1,Upper
+P03,2,Lower
+P04,1,Upper Push-Pull
+P04,2,Lower Squat-Hinge
+P05,1,Full Body A
+P05,2,Full Body B
+P05,3,Full Body C
+P06,1,Upper
+P06,2,Lower
+P06,3,Upper
+P07,1,Push
+P07,2,Pull
+P07,3,Legs
+P08,1,Squat
+P08,2,Bench Press
+P08,3,Deadlift
+P09,1,Chest + Back
+P09,2,Arms + Shoulders
+P09,3,Legs
+P10,1,Full Body Heavy
+P10,2,Full Body Light
+P10,3,Full Body Medium
+P11,1,Upper A
+P11,2,Lower A
+P11,3,Upper B
+P11,4,Lower B
+P12,1,Full Body A
+P12,2,Full Body B
+P12,3,Full Body C
+P12,4,Full Body D
+P13,1,Chest & Back
+P13,2,Quads & Hamstrings
+P13,3,Shoulders & Arms
+P13,4,Glutes & Calves
+P14,1,Upper Heavy
+P14,2,Lower Heavy
+P14,3,Upper Hypertrophy
+P14,4,Lower Hypertrophy
+P15,1,Squat
+P15,2,Bench Press
+P15,3,Deadlift
+P15,4,Overhead Press
+P16,1,Chest & Triceps
+P16,2,Back & Biceps
+P16,3,Legs
+P16,4,Shoulders
+P17,1,Chest
+P17,2,Back
+P17,3,Legs
+P17,4,Shoulders
+P17,5,Arms
+P18,1,Upper Power
+P18,2,Lower Power
+P18,3,Push
+P18,4,Pull
+P18,5,Legs
+P19,1,Push
+P19,2,Pull
+P19,3,Legs
+P19,4,Upper
+P19,5,Lower
+P20,1,Full Body 1
+P20,2,Full Body 2
+P20,3,Full Body 3
+P20,4,Full Body 4
+P20,5,Full Body 5
+P21,1,Snatch
+P21,2,Clean & Jerk
+P21,3,Squat
+P21,4,Accessory Pulls
+P21,5,Accessory Presses
+P22,1,Pasangan Antagonis 1
+P22,2,Pasangan Antagonis 2
+P22,3,Pasangan Antagonis 3
+P22,4,Pasangan Antagonis 4
+P22,5,Pasangan Antagonis 5
+P23,1,Push
+P23,2,Pull
+P23,3,Legs
+P23,4,Push
+P23,5,Pull
+P23,6,Legs
+P24,1,Upper
+P24,2,Lower
+P24,3,Upper
+P24,4,Lower
+P24,5,Upper
+P24,6,Lower
+P25,1,Chest
+P25,2,Back
+P25,3,Quads
+P25,4,Hamstrings
+P25,5,Shoulders
+P25,6,Arms
+P26,1,Full Body 1
+P26,2,Full Body 2
+P26,3,Full Body 3
+P26,4,Full Body 4
+P26,5,Full Body 5
+P26,6,Full Body 6
+P27,1,Pasangan Antagonis 1
+P27,2,Pasangan Antagonis 2
+P27,3,Pasangan Antagonis 3
+P27,4,Pasangan Antagonis 4
+P27,5,Pasangan Antagonis 5
+P27,6,Pasangan Antagonis 6
+P28,1,Heavy Compound Strength
+P28,2,Explosive Plyometric/Skill
+P28,3,Targeted Accessory
+P28,4,Heavy Compound Strength
+P28,5,Explosive Plyometric/Skill
+P28,6,Targeted Accessory
