@@ -55,77 +55,105 @@ Install the following software before proceeding:
 Open a terminal and run:
 
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/vito-boni/TFE_CBF_CS
+cd TFE_CBF_CS
 ```
-
-Replace `<repository-url>` with the Git URL of this repository and `<repository-folder>` with the resulting project directory.
 
 Alternatively, download the repository as a ZIP file from GitHub and extract it.
 
 ### 2. Create a Virtual Environment
 
-From the project directory, run:
+From the project root directory, create a virtual environment named `.venv`:
+
+**macOS / Linux:**
 
 ```bash
-python -m venv venv
-```
-
-Activate the environment according to your operating system.
-
-**MacOS / Linux:**
-
-```bash
-source venv/bin/activate
+python3 -m venv .venv
 ```
 
 **Windows:**
 
 ```bash
-venv\Scripts\activate
+python -m venv .venv
 ```
+
+Activate the virtual environment:
+
+**macOS / Linux:**
+
+```bash
+source .venv/bin/activate
+```
+
+**Windows (PowerShell / Command Prompt):**
+
+```bash
+.venv\Scripts\activate
+```
+
+> **Note:** Once activated, your terminal prompt should display `(.venv)`. Using `.venv` matches the project's `.gitignore` and VS Code configuration.
 
 ### 3. Install Dependencies
 
-Install the Python packages required by the project.
-
-If the repository contains a `requirements.txt` file, run:
+Ensure your virtual environment is active, then install the required Python packages:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-If it does not, install the dependencies specified by the project before running the application.
+### 4. Configure the Database & Environment
 
-### 4. Configure the Database
-
-1. Start the MySQL server through MAMP or your chosen MySQL environment.
-2. Open phpMyAdmin in your browser.
-3. Create the database required by the application.
-4. Configure the database connection in the project according to its existing configuration.
-5. Import the database schema and data if they are provided with the repository.
-
-**Note:** The database name, credentials, schema, and import procedure depend on the project's actual configuration.
+1. **Start MySQL:** Start the MySQL server using MAMP (default port `8889`) or your preferred MySQL service (e.g., port `3306`).
+2. **Create Database:** Open phpMyAdmin (e.g., `http://localhost:8888/phpMyAdmin/` on MAMP) and create a database named:
+   ```sql
+   bijesgym
+   ```
+3. **Import Schema (Optional):** Import `app/config/schema.sql` via phpMyAdmin, or let the application automatically initialize the required tables on first run.
+4. **Environment Variables:** Create a `.env` file in the project root (or copy from `.env.example`):
+   ```bash
+   cp .env.example .env
+   ```
+   Ensure `DATABASE_URL` matches your local MySQL credentials:
+   ```env
+   FLASK_APP=server.py
+   FLASK_ENV=development
+   SECRET_KEY=your-secret-key
+   DATABASE_URL=mysql://root:root@localhost:8889/bijesgym
+   PYTHONDONTWRITEBYTECODE=1
+   ```
 
 ### 5. Run the Application
 
-From the project root directory with the virtual environment activated, execute:
+With the virtual environment activated, run the application:
 
 ```bash
 python server.py
-# or using Flask CLI:
+```
+
+Or using the Flask CLI:
+
+```bash
 flask --app server.py run --port 5001 --debug
 ```
 
-The unified application will serve both frontend views and API routes at `http://localhost:5001`.
+Open your browser and navigate to:
+```
+http://localhost:5001
+```
+
+The unified application serves both frontend views and backend API routes.
 
 ### 6. Run the Test Suite
 
-Execute the entire test suite with zero regression:
+Execute the test suite to verify the installation:
 
 ```bash
 pytest tests/
-# or using Python's standard library test runner:
+```
+
+Or using Python's standard library test runner:
+
+```bash
 python -m unittest discover tests
 ```
 
