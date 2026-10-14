@@ -189,7 +189,7 @@
                         <div class="daily-card-body">
                             <div class="session-phase warmup">
                                 <span class="phase-pill warmup">Pemanasan</span>
-                                <span class="phase-name"><strong>${escapeHtml(s.warmup.name)}</strong> • Estimasi ${escapeHtml(s.warmup.est_text)}</span>
+                                <span class="phase-name"><strong>${escapeHtml(s.warmup?.name || 'Pemanasan Dinamis')}</strong> • Estimasi ${escapeHtml(s.warmup?.est_text || '5 menit')}</span>
                             </div>
                             <hr class="section-divider">
                             <div class="exercise-grid grid-cols-2 gap-y-3 gap-x-4">
@@ -198,7 +198,7 @@
                             <hr class="section-divider">
                             <div class="session-phase cooldown">
                                 <span class="phase-pill cooldown">Pendinginan</span>
-                                <span class="phase-name"><strong>${escapeHtml(s.cooldown.name)}</strong> • Estimasi ${escapeHtml(s.cooldown.est_text)}</span>
+                                <span class="phase-name"><strong>${escapeHtml(s.cooldown?.name || 'Pendinginan & Peregangan')}</strong> • Estimasi ${escapeHtml(s.cooldown?.est_text || '5 menit')}</span>
                             </div>
                             ${renderCardioBlock(s.cardio_block)}
                             ${renderMobilityBlock(s.mobility_block)}
@@ -323,7 +323,7 @@
                     button.disabled = false;
                     return;
                 }
-                window.location.replace('../login/login.html');
+                window.location.replace('/auth/login');
             });
         });
 
@@ -641,4 +641,3 @@
                 container.innerHTML = `<p class="empty">Data beranda gagal dimuat: ${escapeHtml(error.message)}</p>`;
             }
         })();
-    </script>

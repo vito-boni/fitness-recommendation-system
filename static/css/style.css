@@ -1503,10 +1503,11 @@ button.secondary:hover:not(:disabled),
 
 .initial-load-note {
     font-size: 0.85rem;
-    color: #9ca3af;
+    color: #e5e7eb;
     font-style: italic;
     padding: 0 4px;
     margin-top: 4px;
+    text-align: center;
 }
 
 /* Fallback .plan class styling */

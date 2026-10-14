@@ -6,46 +6,461 @@
     <title>Bije's Gym - Personalized Fitness Recommendation</title>
     <link rel="stylesheet" href="/static/css/brand.css">
     <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        /* ==========================================================================
+           Ultra-Minimalist Centered Welcome View
+           Focus: 4 Core Elements, Zero Clutter, Pure Athletic Focus
+           ========================================================================== */
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        body.welcome-body {
+            position: relative;
+            min-height: 100vh;
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-canvas, #060608);
+            color: #ffffff;
+            font-family: var(--font-sans, "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+        }
+
+        /* Ambient video layer for subtle cinematic depth */
+        .welcome-bg-video {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            opacity: 0.28;
+            filter: brightness(0.65) contrast(1.15);
+            pointer-events: none;
+        }
+
+        /* Radial glow overlay */
+        .welcome-bg-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background:
+                radial-gradient(ellipse 70% 50% at 50% 25%, rgba(220, 38, 38, 0.22) 0%, transparent 90%),
+                radial-gradient(circle 900px at 50% 50%, rgba(14, 16, 21, 0.65) 0%, rgba(6, 6, 8, 0.94) 85%);
+            pointer-events: none;
+        }
+
+        /* Ultra-minimalist centered container */
+        .welcome-stage {
+            width: 100%;
+            max-width: 840px;
+            padding: 2rem 1.5rem;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            gap: clamp(1.25rem, 2.5vh, 2rem);
+        }
+
+        /* 1. Transparent Brand Logo (No background) */
+        .welcome-brand-mark {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .welcome-brand-mark .brand-mark {
+            margin-bottom: 0;
+        }
+
+        .welcome-brand-mark .brand-badge {
+            font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            color: #ffffff;
+            text-shadow:
+                0 4px 24px rgba(0, 0, 0, 0.9),
+                0 0 36px rgba(220, 38, 38, 0.4);
+            position: relative;
+            display: inline-block;
+        }
+
+        .welcome-brand-mark .brand-badge::after {
+            content: "";
+            display: block;
+            width: 130px;
+            height: 3px;
+            margin: 10px auto 0;
+            border-radius: 999px;
+            background: var(--brand-crimson, #dc2626);
+            box-shadow: 0 0 16px rgba(220, 38, 38, 0.85);
+        }
+
+        .welcome-brand-mark .brand-motto {
+            font-size: clamp(0.75rem, 1.1vw, 0.875rem);
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.72);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+            margin: 8px 0 0 0;
+        }
+
+        /* 2. Bold, Energizing Headline */
+        .welcome-headline {
+            font-size: clamp(1.85rem, 4.2vw, 2.85rem);
+            font-weight: 900;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin: 0;
+            max-width: 20ch;
+            text-shadow:
+                0 4px 24px rgba(0, 0, 0, 0.9),
+                0 0 44px rgba(220, 38, 38, 0.45);
+        }
+
+        /* 3. Highlighted Key Features Section */
+        .welcome-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 0;
+        }
+
+        .feature-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 18px;
+            border-radius: 999px;
+            background: rgba(18, 20, 26, 0.65);
+            backdrop-filter: blur(14px) saturate(160%);
+            -webkit-backdrop-filter: blur(14px) saturate(160%);
+            border: 1px solid rgba(220, 38, 38, 0.35);
+            font-size: clamp(0.8125rem, 1.1vw, 0.875rem);
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 0.01em;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            transition: border-color 0.18s ease, transform 0.18s ease;
+        }
+
+        .feature-chip:hover {
+            border-color: rgba(239, 68, 68, 0.6);
+            transform: translateY(-1px);
+        }
+
+        /* 4. Primary Start Button */
+        .welcome-cta {
+            display: flex;
+            justify-content: center;
+            margin-top: 4px;
+        }
+
+        .welcome-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 54px;
+            padding: 14px 44px;
+            font-size: 1.0625rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #ffffff;
+            border-radius: var(--radius-md, 8px);
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%);
+            border: 1px solid #f87171;
+            box-shadow:
+                0 8px 28px rgba(220, 38, 38, 0.55),
+                0 2px 8px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.35);
+            transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+        }
+
+        .welcome-btn:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #f87171 0%, #ef4444 50%, #dc2626 100%);
+            border-color: #fca5a5;
+            box-shadow:
+                0 14px 38px rgba(220, 38, 38, 0.72),
+                0 4px 14px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.45);
+        }
+
+        .welcome-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 16px rgba(220, 38, 38, 0.45);
+        }
+
+        .welcome-btn svg {
+            transition: transform 0.18s ease;
+        }
+
+        .welcome-btn:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Subtle, Transparent Text-Only Trigger at Bottom Right */
+        .about-trigger {
+            all: unset;
+            position: fixed;
+            bottom: var(--space-4, 16px);
+            right: var(--space-5, 20px);
+            z-index: 50;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.42);
+            cursor: pointer;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.18s ease;
+            letter-spacing: 0.01em;
+            padding: 4px 6px;
+        }
+
+        .about-trigger:hover,
+        .about-trigger:focus-visible {
+            color: rgba(255, 255, 255, 0.95);
+            text-decoration-color: #ef4444;
+        }
+
+        /* Subtle Modal for Secondary Details (About & Copyright) */
+        .about-modal-backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.22s ease;
+        }
+
+        .about-modal-backdrop.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .about-modal-card {
+            width: 100%;
+            max-width: 520px;
+            background: rgba(14, 16, 22, 0.94);
+            border: 1px solid rgba(220, 38, 38, 0.35);
+            border-radius: var(--radius-xl, 16px);
+            box-shadow:
+                0 24px 64px rgba(0, 0, 0, 0.85),
+                0 0 32px rgba(220, 38, 38, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            padding: 28px 32px;
+            text-align: left;
+            position: relative;
+            transform: scale(0.96) translateY(8px);
+            transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .about-modal-backdrop.active .about-modal-card {
+            transform: scale(1) translateY(0);
+        }
+
+        .about-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .about-modal-header h2 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .about-modal-close {
+            all: unset;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 1.5rem;
+            line-height: 1;
+            border-radius: 6px;
+            transition: color 0.15s ease, background 0.15s ease;
+        }
+
+        .about-modal-close:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .about-modal-body p {
+            font-size: 0.925rem;
+            line-height: 1.7;
+            color: #d1d5db;
+            margin: 0 0 16px 0;
+        }
+
+        .about-modal-body em {
+            color: #ffffff;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .about-modal-meta {
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .about-copyright {
+            font-size: 0.8125rem !important;
+            color: #9ca3af !important;
+            margin: 0 !important;
+        }
+
+        @media (max-width: 640px) {
+            .welcome-stage {
+                padding: 1.5rem 1rem;
+                gap: 1.25rem;
+            }
+
+            .welcome-btn {
+                width: 100%;
+                padding: 14px 20px;
+            }
+
+            .about-modal-card {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
-<body>
-    <header class="site-header">
-        <div class="brand-mark">
-            <span class="brand-badge">Bije's Gym</span>
-        </div>
-        <p class="brand-motto">Built for the Driven</p>
-        <p class="page-context">Sistem Rekomendasi Program Latihan Berbasis Web</p>
-    </header>
+<body class="welcome-body">
+    <!-- Ambient Athletic Video Background -->
+    <video class="welcome-bg-video" autoplay muted loop playsinline aria-hidden="true" tabindex="-1">
+        <source src="/static/media/vid/gym.mp4" type="video/mp4">
+    </video>
+    <div class="welcome-bg-overlay" aria-hidden="true"></div>
 
-    <main>
-        <section class="card" style="text-align: center; padding: 2.5rem 1.5rem; max-width: 720px; margin: 2rem auto;">
-            <h2 style="font-size: 1.75rem; margin-bottom: 0.75rem;">Selamat Datang di Bije's Gym</h2>
-            <p style="color: var(--text-muted, #94a3b8); line-height: 1.6; margin-bottom: 2rem;">
-                Platform perancangan program latihan cerdas menggunakan metode
-                <em>Content-Based Filtering</em> dan <em>Weighted Cosine Similarity</em>.
-                Disesuaikan secara deterministik dengan komposisi tubuh, kapasitas kardiovaskular,
-                tingkat pengalaman latihan, ketersediaan alat, serta riwayat keluhan fisik Anda.
-            </p>
-
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="/auth/login" class="inline-link" style="padding: 0.75rem 1.5rem; background: var(--accent, #e11d48); color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600;">
-                    Masuk / Daftar Akun
-                </a>
-                <a href="/asesmen" class="inline-link" style="padding: 0.75rem 1.5rem; background: #334155; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600;">
-                    Mulai Asesmen Fisik
-                </a>
-                <a href="/dashboard" class="inline-link" style="padding: 0.75rem 1.5rem; background: #1e293b; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600;">
-                    Dashboard Latihan
-                </a>
+    <!-- Centered Stage with 4 Core Elements -->
+    <main class="welcome-stage">
+        <!-- 1. Transparent Brand Logo (No background) -->
+        <div class="welcome-brand-mark">
+            <div class="brand-mark">
+                <span class="brand-badge">Bije's Gym</span>
             </div>
-        </section>
+            <p class="brand-motto">Built for the Driven</p>
+        </div>
+
+        <!-- 2. Main Headline Phrase -->
+        <h1 class="welcome-headline">MULAI PERJALANAN HIDUP SEHAT ANDA DARI SINI!</h1>
+
+        <!-- 3. Highlighted Key Features Section -->
+        <div class="welcome-features">
+            <span class="feature-chip">⚡ Rekomendasi Cerdas</span>
+            <span class="feature-chip">🛡️ Protokol Aman PAR-Q+</span>
+            <span class="feature-chip">🎯 Kustomisasi Program</span>
+        </div>
+
+        <!-- 4. Primary Start Button -->
+        <div class="welcome-cta">
+            <a href="/auth/login" class="inline-link welcome-btn">
+                <span>MULAI SEKARANG</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
     </main>
 
-    <footer>
-        <p>@ All Copyright 2026, Bije's Gym &amp; Vito Boni. All Rights Reserved</p>
-    </footer>
+    <!-- Subtle, Transparent Text-Only Trigger at Bottom Right -->
+    <button type="button" class="about-trigger" id="openAboutModal" aria-haspopup="dialog">
+        Tentang Kami
+    </button>
+
+    <!-- Modal for Secondary Details (About & Copyright) -->
+    <div id="aboutModal" class="about-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="aboutModalTitle">
+        <div class="about-modal-card">
+            <div class="about-modal-header">
+                <h2 id="aboutModalTitle">Tentang Bije's Gym</h2>
+                <button type="button" class="about-modal-close" id="closeAboutModal" aria-label="Tutup modal">&times;</button>
+            </div>
+            <div class="about-modal-body">
+                <p>
+                    Platform perancangan program latihan cerdas menggunakan metode
+                    <em>Content-Based Filtering</em> dan <em>Weighted Cosine Similarity</em>.
+                    Disesuaikan secara deterministik dengan komposisi tubuh, kapasitas kardiovaskular,
+                    tingkat pengalaman latihan, ketersediaan alat, serta riwayat keluhan fisik Anda.
+                </p>
+                <div class="about-modal-meta">
+                    <p class="about-copyright">@ All Copyright 2026, Bije's Gym &amp; Vito Boni. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
-        // Check if member is already authenticated and redirect seamlessly to dashboard
+        // Modal Handlers
+        const aboutModal = document.getElementById('aboutModal');
+        const openAboutModalBtn = document.getElementById('openAboutModal');
+        const closeAboutModalBtn = document.getElementById('closeAboutModal');
+
+        function openModal() {
+            aboutModal.classList.add('active');
+            aboutModal.setAttribute('aria-hidden', 'false');
+            closeAboutModalBtn?.focus();
+        }
+
+        function closeModal() {
+            aboutModal.classList.remove('active');
+            aboutModal.setAttribute('aria-hidden', 'true');
+            openAboutModalBtn?.focus();
+        }
+
+        openAboutModalBtn?.addEventListener('click', openModal);
+        closeAboutModalBtn?.addEventListener('click', closeModal);
+
+        aboutModal?.addEventListener('click', (e) => {
+            if (e.target === aboutModal) closeModal();
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && aboutModal?.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Authenticated Session Check
         fetch('/api/auth/session', { credentials: 'include' })
             .then(res => {
                 if (res.ok) {

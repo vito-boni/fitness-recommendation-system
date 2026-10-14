@@ -75,4 +75,3 @@
                 resultList.innerHTML = `<p class="empty">Hasil rekomendasi gagal dimuat: ${error.message}</p>`;
             }
         })();
-    </script>
