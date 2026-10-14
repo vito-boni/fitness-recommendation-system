@@ -1,39 +1,3 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beranda - Bije's Gym</title>
-    <link rel="stylesheet" href="/static/css/brand.css" />
-    <link rel="stylesheet" href="/static/css/style.css" />
-</head>
-<body>
-    <header class="site-header">
-        <div class="brand-mark">
-            <span class="brand-badge">Bije's Gym</span>
-        </div>
-        <p class="brand-motto">Built for the Driven</p>
-        <p class="page-context">Beranda</p>
-    </header>
-
-    <main>
-        <nav class="top-nav" aria-label="Navigasi utama">
-            <a href="/dashboard" class="active" aria-current="page">Beranda</a>
-            <a href="/profile">Profil &amp; Akun</a>
-            <button type="button" class="secondary" data-action="logout">Keluar</button>
-        </nav>
-
-        <div class="section-header-wrap">
-            <h2>Rencana Latihan Saya</h2>
-        </div>
-        <div id="selectedPlan" class="space-y-8"></div>
-    </main>
-
-    <footer>
-        <p>@ All Copyright 2026, Bije's Gym & Vito Boni. All Rights Reserved</p>
-    </footer>
-
-    <script>
         const API_BASE = "";
         const container = document.getElementById('selectedPlan');
         const DAYS_OF_WEEK = ['', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
@@ -671,12 +635,10 @@
                 renderDashboardView();
             } catch (error) {
                 if (error.status === 401) {
-                    window.location.href = '../login/login.html';
+                    window.location.href = '/auth/login';
                     return;
                 }
                 container.innerHTML = `<p class="empty">Data beranda gagal dimuat: ${escapeHtml(error.message)}</p>`;
             }
         })();
     </script>
-</body>
-</html>

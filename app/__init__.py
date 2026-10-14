@@ -1,5 +1,8 @@
 import logging
 import os
+import sys
+
+sys.dont_write_bytecode = True
 
 from dotenv import load_dotenv
 from flask import Flask, jsonify, redirect, render_template, request, send_from_directory, url_for
@@ -76,7 +79,7 @@ def create_app(test_config=None):
     def health():
         return jsonify({"status": "ok", "message": "Bije's Gym backend is running."})
 
-    # Consolidated Frontend Page Views
+    # Consolidated Frontend Page Views (Approach B: Ordered Flat Templates)
     @app.get("/")
     def index():
         return render_template("index.html")
@@ -86,27 +89,27 @@ def create_app(test_config=None):
     @app.get("/login/login.html")
     @app.get("/auth/login/login.html")
     def login_page():
-        return render_template("auth/login.html")
-
-    @app.get("/dashboard")
-    @app.get("/dashboard/index.html")
-    def dashboard_page():
-        return render_template("dashboard/index.html")
+        return render_template("01_login.html")
 
     @app.get("/asesmen")
     @app.get("/asesmen/index.html")
     def asesmen_page():
-        return render_template("asesmen/index.html")
+        return render_template("02_asesmen.html")
 
     @app.get("/recommendation")
     @app.get("/recommendation/index.html")
     def recommendation_page():
-        return render_template("recommendation/index.html")
+        return render_template("03_recommendation.html")
+
+    @app.get("/dashboard")
+    @app.get("/dashboard/index.html")
+    def dashboard_page():
+        return render_template("04_dashboard.html")
 
     @app.get("/profile")
     @app.get("/profile/index.html")
     def profile_page():
-        return render_template("profile/index.html")
+        return render_template("05_profile.html")
 
     # Backward compatibility alias for legacy static asset requests
     @app.route("/assets/<path:filename>")

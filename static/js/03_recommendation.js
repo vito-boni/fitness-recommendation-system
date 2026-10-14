@@ -1,39 +1,3 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hasil Rekomendasi - Bije's Gym</title>
-    <link rel="stylesheet" href="/static/css/brand.css" />
-    <link rel="stylesheet" href="/static/css/style.css" />
-</head>
-<body>
-    <header class="site-header">
-        <div class="brand-mark">
-            <span class="brand-badge">Bije's Gym</span>
-        </div>
-        <p class="brand-motto">Built for the Driven</p>
-        <p class="page-context">Hasil Rekomendasi</p>
-    </header>
-
-    <main>
-        <nav class="top-nav" aria-label="Navigasi rekomendasi">
-            <a href="/asesmen">Ambil Asesmen Ulang</a>
-            <a href="/dashboard">Beranda</a>
-            <a href="/profile">Profil &amp; Akun</a>
-        </nav>
-
-        <section class="card">
-            <h2>Hasil Rekomendasi Program</h2>
-            <div id="recommendationResultList"></div>
-        </section>
-    </main>
-
-    <footer>
-        <p>@ All Copyright 2026, Bije's Gym &amp; Vito Boni. All Rights Reserved</p>
-    </footer>
-
-    <script>
         const API_BASE = "";
         const resultList = document.getElementById('recommendationResultList');
         let recommendations = [];
@@ -112,5 +76,3 @@
             }
         })();
     </script>
-</body>
-</html>
