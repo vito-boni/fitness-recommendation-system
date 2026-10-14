@@ -1,0 +1,121 @@
+id,name,muscle_group,primary_muscle,pattern,equipment,facility_req,movement_type,role,difficulty,impact_level,setup,joint_stress,load_ratio,load_unit,max_kg,sec_per_rep,timed_default_sec,source,biomech
+bench_press,Bench Press,chest,chest,push,barbell,2|5|6,compound,main,2,2,3,shoulder|elbow|wrist,0.5,total,,5,0,list,long_rom_press
+dumbbell_bench_press,Dumbbell Bench Press,chest,chest,push,dumbbell,1|6,compound,main,2,2,2,shoulder,0.2,per_hand,30,4,0,list,stable_press
+push_ups,Push Ups,chest,chest,push,bodyweight,,compound,main,1,1,1,shoulder|wrist,0,bodyweight,,3,0,list,neutral
+incline_push_up,Incline Push Up,chest,chest,push,bodyweight,,compound,main,1,1,1,wrist,0,bodyweight,,3,0,list,neutral
+chest_press,Chest Press,chest,chest,push,machine,4,compound,main,1,1,1,shoulder,0.4,total,,4,0,list,stable_press
+machine_chest_fly,Machine Chest Fly,chest,chest,push,machine,4,isolation,accessory,1,1,1,shoulder,0.3,total,,3,0,list,neutral
+cable_fly,Cable Fly,chest,chest,push,cable,3,isolation,accessory,2,1,2,shoulder,0.1,per_hand,,3,0,list,neutral
+dumbbell_fly,Dumbbell Fly,chest,chest,push,dumbbell,1|6,isolation,accessory,2,2,2,shoulder,0.1,per_hand,30,3,0,list,neutral
+smith_machine_bench_press,Smith Machine Bench Press,chest,chest,push,smith,4|6,compound,main,1,2,2,shoulder|wrist,0.45,total,,4,0,list,stable_press
+dumbbell_pullover,Dumbbell Pullover,chest,chest,push,dumbbell,1|6,isolation,accessory,2,2,2,shoulder,0.2,total,30,3,0,list,neutral
+deadlift,Deadlift,back,back,pull,barbell,2,compound,main,3,3,2,lower_back|hip|knee,0.8,total,,5,0,list,hinge
+rack_pull,Rack Pull,back,back,pull,barbell,2|5,compound,main,3,3,3,lower_back|hip,0.9,total,,5,0,list,hinge
+bent_over_row,Bent Over Row,back,back,pull,barbell,2,compound,main,3,3,2,lower_back,0.45,total,,5,0,list,hinge
+dumbbell_row,Dumbbell Row,back,back,pull,dumbbell,1,compound,main,1,1,2,,0.25,per_hand,30,4,0,list,neutral
+lat_pulldown,Lat Pulldown,back,back,pull,machine,4,compound,main,1,1,1,shoulder,0.5,total,,4,0,list,neutral
+close_grip_lat_pulldown,Close Grip Lat Pulldown,back,back,pull,machine,4,compound,main,1,1,1,shoulder,0.45,total,,4,0,list,neutral
+reverse_grip_lat_pulldown,Reverse Grip Lat Pulldown,back,back,pull,machine,4,compound,main,1,1,1,shoulder|elbow,0.45,total,,4,0,list,neutral
+seated_cable_row,Seated Cable Row,back,back,pull,machine,4,compound,main,1,1,1,,0.45,total,,4,0,list,neutral
+machine_row,Machine Row,back,back,pull,machine,4,compound,main,1,1,1,,0.4,total,,4,0,list,neutral
+t_bar_row,T Bar Row,back,back,pull,machine,4,compound,main,2,2,2,lower_back,0.3,total,,4,0,list,neutral
+straight_arm_pulldown,Straight Arm Pulldown,back,back,pull,cable,3,isolation,accessory,2,1,1,shoulder,0.25,total,,3,0,list,neutral
+inverted_row,Inverted Row,back,back,pull,smith,4,compound,main,2,1,2,shoulder|elbow,0,bodyweight,,3,0,list,neutral
+barbell_shrug,Barbell Shrug,back,back,pull,barbell,2,isolation,accessory,1,2,2,neck,0.6,total,,5,0,list,neutral
+dumbbell_shrug,Dumbbell Shrug,back,back,pull,dumbbell,1,isolation,accessory,1,1,2,neck,0.25,per_hand,30,3,0,list,neutral
+shoulder_press,Shoulder Press,shoulders,shoulders,push,barbell,2|5,compound,main,2,2,2,shoulder|lower_back|wrist,0.3,total,,5,0,list,neutral
+military_press,Military Press,shoulders,shoulders,push,barbell,2|5,compound,main,2,2,2,shoulder|lower_back|wrist,0.3,total,,5,0,list,neutral
+dumbbell_shoulder_press,Dumbbell Shoulder Press,shoulders,shoulders,push,dumbbell,1,compound,main,2,2,2,shoulder,0.14,per_hand,30,4,0,list,stable_press
+machine_shoulder_press,Machine Shoulder Press,shoulders,shoulders,push,machine,4,compound,main,1,1,1,shoulder,0.3,total,,4,0,list,stable_press
+arnold_press,Arnold Press,shoulders,shoulders,push,dumbbell,1,compound,main,2,2,2,shoulder,0.12,per_hand,30,4,0,list,neutral
+dumbbell_lateral_raise,Dumbbell Lateral Raise,shoulders,shoulders,push,dumbbell,1,isolation,accessory,1,1,1,shoulder,0.06,per_hand,30,3,0,list,neutral
+cable_lateral_raise,Cable Lateral Raise,shoulders,shoulders,push,cable,3,isolation,accessory,2,1,1,shoulder,0.05,per_hand,,3,0,list,neutral
+dumbbell_front_raise,Dumbbell Front Raise,shoulders,shoulders,push,dumbbell,1,isolation,accessory,1,1,1,shoulder,0.07,per_hand,30,3,0,list,neutral
+dumbbell_reverse_fly,Dumbbell Reverse Fly,shoulders,shoulders,pull,dumbbell,1,isolation,accessory,2,1,1,shoulder,0.05,per_hand,30,3,0,list,neutral
+machine_reverse_fly,Machine Reverse Fly,shoulders,shoulders,pull,machine,4,isolation,accessory,1,1,1,shoulder,0.2,total,,3,0,list,neutral
+cable_reverse_fly,Cable Reverse Fly,shoulders,shoulders,pull,cable,3,isolation,accessory,2,1,1,shoulder,0.05,per_hand,,3,0,list,neutral
+face_pull,Face Pull,shoulders,shoulders,pull,cable,3,isolation,accessory,2,1,2,shoulder,0.2,total,,3,0,list,neutral
+squat,Squat,legs,quads,legs,barbell,2|5,compound,main,3,3,3,knee|hip|lower_back,0.6,total,,5,0,list,barbell_squat
+goblet_squat,Goblet Squat,legs,quads,legs,dumbbell,1,compound,main,1,2,1,knee,0.25,total,30,4,0,list,upright_squat
+bodyweight_squat,Bodyweight Squat,legs,quads,legs,bodyweight,,compound,main,1,1,1,knee,0,bodyweight,,3,0,list,upright_squat
+smith_machine_squat,Smith Machine Squat,legs,quads,legs,smith,4,compound,main,1,2,2,knee,0.5,total,,4,0,list,upright_squat
+hack_squat,Hack Squat,legs,quads,legs,machine,4,compound,main,2,2,2,knee,0.6,total,,4,0,list,upright_squat
+v_squat,V-Squat,legs,quads,legs,machine,4,compound,main,1,2,2,knee,0.6,total,,4,0,custom,upright_squat
+leg_extension,Leg Extension,legs,quads,legs,machine,4,isolation,accessory,1,1,1,knee,0.35,total,,3,0,list,neutral
+seated_leg_curl,Seated Leg Curl,legs,hamstrings,legs,machine,4,isolation,accessory,1,1,1,knee,0.3,total,,3,0,list,neutral
+romanian_deadlift,Romanian Deadlift,legs,hamstrings,legs,barbell,2,compound,main,3,3,2,lower_back|hip,0.6,total,,5,0,list,hinge
+dumbbell_romanian_deadlift,Dumbbell Romanian Deadlift,legs,hamstrings,legs,dumbbell,1,compound,main,2,2,2,lower_back|hip,0.2,per_hand,30,4,0,list,neutral
+hip_thrust,Hip Thrust,legs,glutes,legs,barbell,2|6,compound,main,2,2,3,hip,0.7,total,,5,0,list,neutral
+glute_bridge,Glute Bridge,legs,glutes,legs,bodyweight,,compound,main,1,1,1,hip,0,bodyweight,,3,0,list,neutral
+dumbbell_bulgarian_split_squat,Dumbbell Bulgarian Split Squat,legs,quads,legs,dumbbell,1|6,compound,main,3,2,2,knee|hip,0.1,per_hand,30,4,0,list,neutral
+dumbbell_lunge,Dumbbell Lunge,legs,quads,legs,dumbbell,1,compound,main,2,2,2,knee,0.12,per_hand,30,4,0,list,neutral
+walking_lunge,Walking Lunge,legs,quads,legs,bodyweight,,compound,main,2,2,1,knee,0,bodyweight,,3,0,list,neutral
+reverse_lunge,Reverse Lunge,legs,quads,legs,bodyweight,,compound,main,2,2,1,knee,0,bodyweight,,3,0,list,neutral
+split_squat,Split Squat,legs,quads,legs,bodyweight,,compound,main,2,2,1,knee,0,bodyweight,,3,0,list,neutral
+hip_abduction,Hip Abduction,legs,glutes,legs,machine,4,isolation,accessory,1,1,1,hip,0.4,total,,3,0,list,neutral
+cable_kickback,Cable Kickback,legs,glutes,legs,cable,3,isolation,accessory,1,1,1,hip,0.08,total,,3,0,list,neutral
+cable_pull_through,Cable Pull Through,legs,glutes,legs,cable,3,compound,main,2,2,1,hip|lower_back,0.25,total,,4,0,list,neutral
+dumbbell_calf_raise,Dumbbell Calf Raise,legs,calves,legs,dumbbell,1,isolation,accessory,1,1,1,ankle,0.2,per_hand,30,3,0,list,neutral
+bodyweight_calf_raise,Bodyweight Calf Raise,legs,calves,legs,bodyweight,,isolation,accessory,1,1,1,ankle,0,bodyweight,,3,0,list,neutral
+dumbbell_curl,Dumbbell Curl,arms,biceps,pull,dumbbell,1,isolation,accessory,1,1,1,elbow,0.08,per_hand,30,3,0,list,neutral
+hammer_curl,Hammer Curl,arms,biceps,pull,dumbbell,1,isolation,accessory,1,1,1,elbow,0.09,per_hand,30,3,0,list,neutral
+ez_bar_curl,EZ Bar Curl,arms,biceps,pull,ez_bar,2,isolation,accessory,1,1,2,elbow,0.2,total,,3,0,list,neutral
+cable_bicep_curl,Cable Bicep Curl,arms,biceps,pull,cable,3,isolation,accessory,1,1,1,elbow,0.2,total,,3,0,list,neutral
+dumbbell_concentration_curl,Dumbbell Concentration Curl,arms,biceps,pull,dumbbell,1,isolation,accessory,1,1,1,elbow,0.07,per_hand,30,3,0,list,neutral
+tricep_pushdown,Tricep Pushdown,arms,triceps,push,cable,3,isolation,accessory,1,1,1,elbow,0.25,total,,3,0,list,neutral
+tricep_rope_pushdown,Tricep Rope Pushdown,arms,triceps,push,cable,3,isolation,accessory,1,1,1,elbow,0.2,total,,3,0,list,neutral
+lying_tricep_extension,Lying Tricep Extension,arms,triceps,push,ez_bar,2|6,isolation,accessory,2,2,2,elbow|shoulder,0.15,total,,3,0,list,neutral
+dumbbell_tricep_extension,Dumbbell Tricep Extension,arms,triceps,push,dumbbell,1,isolation,accessory,2,2,1,elbow|shoulder,0.12,total,30,3,0,list,neutral
+cable_overhead_tricep_extension,Cable Overhead Tricep Extension,arms,triceps,push,cable,3,isolation,accessory,2,1,1,elbow|shoulder,0.15,total,,3,0,list,neutral
+dumbbell_tricep_kickback,Dumbbell Tricep Kickback,arms,triceps,push,dumbbell,1,isolation,accessory,1,1,1,elbow,0.04,per_hand,30,3,0,list,neutral
+bench_dips,Bench Dips,arms,triceps,push,bodyweight,6,compound,main,2,2,1,shoulder|elbow,0,bodyweight,,3,0,list,neutral
+close_grip_bench_press,Close Grip Bench Press,arms,triceps,push,barbell,2|5|6,compound,main,2,2,3,shoulder|elbow|wrist,0.4,total,,5,0,list,long_rom_press
+plank,Plank,core,core,core,bodyweight,,isolation,core,1,1,1,,0,bodyweight,,3,30,list,neutral
+side_plank,Side Plank,core,core,core,bodyweight,,isolation,core,1,1,1,shoulder,0,bodyweight,,3,25,list,neutral
+crunches,Crunches,core,core,core,bodyweight,,isolation,core,1,1,1,,0,bodyweight,,3,0,list,neutral
+sit_ups,Sit Ups,core,core,core,bodyweight,,isolation,core,1,1,1,lower_back,0,bodyweight,,3,0,list,neutral
+bicycle_crunch,Bicycle Crunch,core,core,core,bodyweight,,isolation,core,1,1,1,,0,bodyweight,,3,0,list,neutral
+lying_leg_raise,Lying Leg Raise,core,core,core,bodyweight,,isolation,core,2,1,1,lower_back|hip,0,bodyweight,,3,0,list,neutral
+russian_twist,Russian Twist,core,core,core,bodyweight,,isolation,core,2,1,1,lower_back,0,bodyweight,,3,0,list,neutral
+superman,Superman,core,core,core,bodyweight,,isolation,core,1,1,1,lower_back,0,bodyweight,,3,0,list,neutral
+cable_crunch,Cable Crunch,core,core,core,cable,3,isolation,core,2,1,1,,0.3,total,,3,0,list,neutral
+machine_seated_crunch,Machine Seated Crunch,core,core,core,machine,4,isolation,core,1,1,1,,0.3,total,,3,0,list,neutral
+cable_woodchopper,Cable Woodchopper,core,core,core,cable,3,compound,core,2,1,1,lower_back,0.12,total,,4,0,list,neutral
+kettlebell_swing,Kettlebell Swing,full_body,full_body,full,kettlebell,,compound,conditioning,2,2,1,lower_back|hip,0.1,total,10,4,0,custom,neutral
+farmers_walk,Farmers Walk,full_body,full_body,full,dumbbell,1,compound,conditioning,1,2,1,,0.25,per_hand,30,4,30,list,neutral
+dumbbell_thruster,Dumbbell Thruster,full_body,full_body,full,dumbbell,1,compound,conditioning,2,2,1,knee|shoulder,0.1,per_hand,30,4,0,list,neutral
+burpees,Burpees,full_body,full_body,full,bodyweight,,compound,conditioning,2,3,1,wrist|knee,0,bodyweight,,3,0,list,neutral
+jumping_jack,Jumping Jack,full_body,full_body,full,bodyweight,,compound,conditioning,1,2,1,ankle|knee,0,bodyweight,,3,30,list,neutral
+mountain_climbers,Mountain Climbers,full_body,full_body,full,bodyweight,,compound,conditioning,2,2,1,wrist|shoulder,0,bodyweight,,3,30,list,neutral
+squat_jump,Squat Jump,legs,quads,legs,bodyweight,,compound,conditioning,2,3,1,knee|ankle,0,bodyweight,,2,0,list,neutral
+battle_ropes,Battle Ropes,full_body,full_body,full,battle_rope,,compound,conditioning,2,2,1,shoulder,0,bodyweight,,3,20,custom,neutral
+treadmill,Treadmill,cardio,cardio,cardio,cardio,7,compound,cardio,1,2,1,knee|ankle,0,time,,0,300,custom,neutral
+static_bike,Static Bike,cardio,cardio,cardio,cardio,7,compound,cardio,1,1,1,,0,time,,0,300,custom,neutral
+leg_press,Leg Press,legs,quads,legs,machine,4,compound,main,1,2,1,knee|hip,0.9,total,,4,0,custom,upright_squat
+smith_machine_hip_thrust,Smith Machine Hip Thrust,legs,glutes,legs,smith,4|6,compound,main,1,1,2,hip,0.6,total,,4,0,custom,neutral
+glute_kickback_machine,Glute Kickback Machine,legs,glutes,legs,machine,4,isolation,accessory,1,1,1,hip,0.3,total,,3,0,custom,neutral
+incline_dumbbell_press,Incline Dumbbell Press,chest,chest,push,dumbbell,1|6,compound,main,2,2,2,shoulder,0.18,per_hand,30,4,0,custom,stable_press
+lying_leg_curl,Lying Leg Curl,legs,hamstrings,legs,machine,4,isolation,accessory,1,1,1,knee,0.3,total,,3,0,custom,neutral
+seated_calf_raise,Seated Calf Raise,legs,calves,legs,machine,4,isolation,accessory,1,1,1,ankle,0.4,total,,3,0,custom,neutral
+standing_calf_raise,Standing Calf Raise,legs,calves,legs,machine,4,isolation,accessory,1,1,1,ankle,0.6,total,,3,0,custom,neutral
+machine_preacher_curl,Machine Preacher Curl,arms,biceps,pull,machine,4,isolation,accessory,1,1,1,elbow,0.15,total,,3,0,custom,neutral
+machine_lateral_raise,Machine Lateral Raise,shoulders,shoulders,push,machine,4,isolation,accessory,1,1,1,shoulder,0.15,total,,3,0,custom,neutral
+elliptical,Elliptical,cardio,cardio,cardio,cardio,7,compound,cardio,1,1,1,,0,time,,0,300,custom,neutral
+rowing_machine,Rowing Machine,cardio,cardio,cardio,cardio,7,compound,cardio,2,1,1,lower_back,0,time,,0,300,custom,neutral
+doorway_chest_stretch,Doorway Chest Stretch,mobility,chest,mobility,bodyweight,,isolation,mobility,1,1,1,shoulder,0,time,,0,30,custom,neutral
+cat_cow,Cat-Cow,mobility,back,mobility,bodyweight,,isolation,mobility,1,1,1,lower_back,0,time,,0,30,custom,neutral
+childs_pose,Child's Pose,mobility,back,mobility,bodyweight,,isolation,mobility,1,1,1,knee,0,time,,0,30,custom,neutral
+thoracic_rotation,Thoracic Rotation (Open Book),mobility,back,mobility,bodyweight,,isolation,mobility,1,1,1,shoulder,0,time,,0,30,custom,neutral
+lat_stretch_overhead,Overhead Lat Stretch,mobility,back,mobility,bodyweight,,isolation,mobility,1,1,1,shoulder,0,time,,0,30,custom,neutral
+cross_body_shoulder_stretch,Cross-Body Shoulder Stretch,mobility,shoulders,mobility,bodyweight,,isolation,mobility,1,1,1,shoulder,0,time,,0,30,custom,neutral
+neck_side_stretch,Neck Side Stretch,mobility,shoulders,mobility,bodyweight,,isolation,mobility,1,1,1,neck,0,time,,0,30,custom,neutral
+biceps_wall_stretch,Biceps Wall Stretch,mobility,biceps,mobility,bodyweight,,isolation,mobility,1,1,1,elbow|shoulder,0,time,,0,30,custom,neutral
+wrist_flexor_stretch,Wrist Flexor Stretch,mobility,biceps,mobility,bodyweight,,isolation,mobility,1,1,1,wrist,0,time,,0,30,custom,neutral
+overhead_triceps_stretch,Overhead Triceps Stretch,mobility,triceps,mobility,bodyweight,,isolation,mobility,1,1,1,shoulder|elbow,0,time,,0,30,custom,neutral
+standing_quad_stretch,Standing Quad Stretch,mobility,quads,mobility,bodyweight,,isolation,mobility,1,1,1,knee,0,time,,0,30,custom,neutral
+kneeling_hip_flexor_stretch,Kneeling Hip Flexor Stretch,mobility,quads,mobility,bodyweight,,isolation,mobility,1,1,1,knee|hip,0,time,,0,30,custom,neutral
+lying_hamstring_stretch,Lying Hamstring Stretch,mobility,hamstrings,mobility,bodyweight,,isolation,mobility,1,1,1,,0,time,,0,30,custom,neutral
+figure_four_stretch,Figure-4 Glute Stretch,mobility,glutes,mobility,bodyweight,,isolation,mobility,1,1,1,hip|knee,0,time,,0,30,custom,neutral
+calf_wall_stretch,Calf Wall Stretch,mobility,calves,mobility,bodyweight,,isolation,mobility,1,1,1,ankle,0,time,,0,30,custom,neutral
+cobra_stretch,Cobra Stretch,mobility,core,mobility,bodyweight,,isolation,mobility,1,1,1,lower_back,0,time,,0,30,custom,neutral
+lying_knee_to_chest,Lying Knee-to-Chest Stretch,mobility,core,mobility,bodyweight,,isolation,mobility,1,1,1,hip,0,time,,0,30,custom,neutral

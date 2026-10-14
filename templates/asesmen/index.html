@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesmen - Bije's Gym</title>
+    <link rel="stylesheet" href="/static/css/brand.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand-mark">
+            <span class="brand-badge">Bije's Gym</span>
+        </div>
+        <p class="brand-motto">Built for the Driven</p>
+        <p class="page-context">Asesmen</p>
+    </header>
+
+    <main>
+        <nav class="top-nav" aria-label="Navigasi utama">
+            <a href="/dashboard">Beranda</a>
+            <a href="/profile">Profil &amp; Akun</a>
+            <button type="button" class="secondary" data-action="logout">Keluar</button>
+        </nav>
+
+        <section class="card">
+            <h2>Profil Member</h2>
+            <p>Isi data berikut untuk mendapatkan rekomendasi program latihan yang sesuai dengan kebutuhan dan kondisi tubuh Anda.</p>
+
+            <form id="recommendationForm" novalidate>
+                <div class="section-block">
+                    <h3>Nama Pengguna</h3>
+                    <div class="field">
+                        <label for="memberName">Nama</label>
+                        <input type="text" id="memberName" name="memberName" placeholder="Masukkan nama Anda">
+                    </div>
+                </div>
+
+                <div class="section-block">
+                    <h3>Data Dasar &amp; Komposisi Tubuh</h3>
+
+                    <div class="grid two-col">
+                        <div class="field">
+                            <label for="age">Umur</label>
+                            <input type="number" id="age" name="age" min="1" max="99" step="1" placeholder="Contoh: 25">
+                        </div>
+
+                        <div class="field">
+                            <label for="gender">Jenis Kelamin</label>
+                            <select id="gender" name="gender">
+                                <option value="">Pilih</option>
+                                <option value="L">Laki-laki</option>
+                                <option value="P">Perempuan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid two-col">
+                        <div class="field">
+                            <label for="height">Tinggi Badan (cm)</label>
+                            <input type="number" id="height" name="height" min="1" max="250" step="1" placeholder="Contoh: 165">
+                        </div>
+
+                        <div class="field">
+                            <label for="weight">Berat Badan (kg)</label>
+                            <input type="number" id="weight" name="weight" min="1" max="220" step="0.1" placeholder="Contoh: 65">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="cardioEndurance">Ketahanan Jantung / Kondisi Kardio</label>
+                        <select id="cardioEndurance" name="cardioEndurance">
+                            <option value="1">Rendah (mudah lelah / jarang kardio)</option>
+                            <option value="2" selected>Sedang / Normal</option>
+                            <option value="3">Baik / Terlatih</option>
+                        </select>
+                    </div>
+
+                    <div class="section-block compact-block">
+                        <h4>Persentase Lemak Tubuh (Opsional)</h4>
+                            <p class="small-note">Masukkan data (InBody / DEXA / lainnya) untuk akurasi FFMI maksimal. Jika dilewati, sistem mengestimasi otomatis.</p>                        <div class="choice-group inline-radio">
+                            <label class="choice-item"><input type="radio" name="bodyFatToggle" value="0" checked> Tidak dulu</label>
+                            <label class="choice-item"><input type="radio" name="bodyFatToggle" value="1"> Isi persentase lemak tubuh</label>
+                        </div>
+                        <div id="bodyFatFields" class="hidden-group" hidden>
+                            <div class="field">
+                                <label for="bodyFat">Persentase Lemak Tubuh (%)</label>
+                                <input type="number" id="bodyFat" name="bodyFat" step="0.1" placeholder="Contoh: 18.5">
+                                <p class="small-note">Digunakan langsung untuk menghitung Fat-Free Mass Index (FFMI) dan massa otot murni.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-block compact-block">
+                        <h4>Data Antropometri Lanjutan (Opsional)</h4>
+                        <p class="small-note">Isi sekarang untuk menyesuaikan variasi latihan dengan biomekanika tubuh Anda, atau ukur bersama PT nanti.</p>                        <div class="choice-group inline-radio">
+                            <label class="choice-item"><input type="radio" name="anthropometryToggle" value="0" checked> Tidak dulu</label>
+                            <label class="choice-item"><input type="radio" name="anthropometryToggle" value="1"> Isi ukuran antropometri</label>
+                        </div>
+                    </div>
+
+                    <div id="anthropometryFields" class="hidden-group" hidden>
+                        <div class="field">
+                            <label for="waist">Lingkar Perut (cm)</label>
+                            <input type="number" id="waist" name="waist" min="0" max="300" step="0.1" placeholder="Contoh: 82">
+                        </div>
+
+                        <div class="grid two-col">
+                            <div class="field">
+                                <label for="shoulder">Lingkar Bahu (cm)</label>
+                                <input type="number" id="shoulder" name="shoulder" min="0" max="300" step="0.1" placeholder="Contoh: 42">
+                            </div>
+                            <div class="field">
+                                <label for="hip">Lingkar Pinggul (cm)</label>
+                                <input type="number" id="hip" name="hip" min="0" max="300" step="0.1" placeholder="Contoh: 96">
+                            </div>
+                        </div>
+
+                        <div class="grid two-col">
+                            <div class="field">
+                                <label for="torsoLength">Panjang Torso (cm)</label>
+                                <input type="number" id="torsoLength" name="torsoLength" min="0" max="300" step="0.1" placeholder="Contoh: 54">
+
+                            </div>
+                            <div class="field">
+                                <label for="armLength">Panjang Lengan (cm)</label>
+                                <input type="number" id="armLength" name="armLength" min="0" max="300" step="0.1" placeholder="Contoh: 58">
+                            </div>
+                        </div>
+
+                        <div class="grid two-col">
+                            <div class="field">
+                                <label for="legLength">Panjang Tungkai (cm)</label>
+                                <input type="number" id="legLength" name="legLength" min="0" max="300" step="0.1" placeholder="Contoh: 82">
+                            </div>
+                            <div class="field">
+                                <label for="insideFootLength">Panjang Kaki Bagian Dalam (cm)</label>
+                                <input type="number" id="insideFootLength" name="insideFootLength" min="0" max="300" step="0.1" placeholder="Contoh: 75">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="field athletic-box" id="athleticMetricsBox" hidden>
+                        <div class="athletic-header">
+                            <label>Komposisi Atletik (FFMI &amp; WtHR)</label>
+                            <div class="athletic-badges">
+                                <span class="metric-chip">FFMI: <strong id="ffmiValue">0.0</strong> kg/m²</span>
+                                <span class="metric-chip" id="wthrChip" hidden>WtHR: <strong id="wthrValue">0.00</strong></span>
+                            </div>
+                        </div>
+                        <div class="athletic-status" id="athleticStatusText">Menunggu data dasar lengkap</div>
+                        <div class="athletic-details-row">
+                            <span id="leanMassText">Massa Bebas Lemak: - kg</span>
+                            <span id="fatMassText">Massa Lemak: - kg</span>
+                        </div>
+                        <div class="athletic-details-row">
+                            <p>
+                            <details class="athletic-details">
+                                <summary>Panduan Standar Persentase Lemak, FFMI &amp; Rasio WtHR</summary>
+                                <div class="table-wrap">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Klasifikasi Kategori Persentase Lemak Tubuh</th>
+                                                <th>Pria Dewasa (L)</th>
+                                                <th>Wanita Dewasa (W)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td>Rendah</td><td>&lt; 14%</td><td>&lt; 21%</td></tr>
+                                            <tr><td>Cukup Rendah</td><td>14% s.d. 17%</td><td>21% s.d. 24%</td></tr>
+                                            <tr><td>Rata-rata</td><td>18% s.d. 24%</td><td>25% s.d. 31%</td></tr>
+                                            <tr><td>Cukup Tinggi</td><td>25% s.d. 30%</td><td>32% s.d. 39%</td></tr>
+                                            <tr><td>Tinggi</td><td>31% s.d. 39%</td><td>40% s.d. 49%</td></tr>
+                                            <tr><td>Sangat Tinggi</td><td>≥ 40%</td><td>≥ 50%</td></tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Klasifikasi FFMI</th>
+                                                <th>Laki-laki (kg/m²)</th>
+                                                <th>Perempuan (kg/m²)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td>Di Bawah Rata-rata</td><td>&lt; 18.0</td><td>&lt; 15.0</td></tr>
+                                            <tr><td>Rata-rata</td><td>18.0 – 19.9</td><td>15.0 – 16.9</td></tr>
+                                            <tr><td>Berotot</td><td>20.0 – 21.9</td><td>17.0 – 18.9</td></tr>
+                                            <tr><td>Sangat Berotot</td><td>22.0 – 24.9</td><td>19.0 – 21.9</td></tr>
+                                            <tr><td>Potensi Genetik Maksimal</td><td>≥ 25.0</td><td>≥ 22.0</td></tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Klasifikasi WtHR</th>
+                                                <th>Rasio Lingkar Perut / Tinggi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td>Optimal Sehat</td><td>&lt; 0.50</td></tr>
+                                            <tr><td>Perhatian Lemak Sentral</td><td>0.50 – 0.59</td></tr>
+                                            <tr><td>Adipositas Sentral Tinggi</td><td>≥ 0.60</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </details>
+                             <p class="small-note">*Informasi ini bukan merupakan diagnosa medis. Untuk hasil yang optimal dan sesuai dengan kondisi kesehatan Anda, konsultasikan dengan tenaga medis profesional.</p>
+                        </div>
+                    </div>
+
+                <div class="section-block">
+                    <h3>Jumlah Hari &amp; Durasi Sesi Latihan</h3>
+                    <div class="grid two-col">
+                        <div class="field">
+                            <label for="weeklyFrequency">Jumlah Hari Latihan per Minggu (1–6 hari)</label>
+                            <input type="number" id="weeklyFrequency" name="weeklyFrequency" min="1" max="6" step="1" inputmode="numeric" placeholder="Contoh: 3">
+                            <p class="small-note">Program disusun tepat sebanyak hari yang Anda masukkan, dan jadwal harinya dapat dikustomisasi di Beranda.</p>
+                        </div>
+
+                        <div class="field">
+                            <label for="sessionDuration">Durasi Sesi Resistance (30–120 menit)</label>
+                            <input type="number" id="sessionDuration" name="sessionDuration" min="30" max="120" step="5" inputmode="numeric" placeholder="Contoh: 60">
+                            <p class="small-note">Sudah termasuk pemanasan &amp; pendinginan masing-masing 5 menit. Dibatasi maksimal 120 menit untuk mencegah <em>junk volume</em> dan kelelahan berlebih sistem saraf pusat (Zając et al., 2015).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-block">
+                    <h3>Pengalaman &amp; Preferensi Kompleksitas Gerak</h3>
+                    <div class="field">
+                        <label>Training Age Tier (Tingkat Pengalaman Latihan Beban)</label>
+                        <div class="choice-group">
+                            <label class="choice-item"><input type="radio" name="experience" value="rookie"> Rookie (&lt; 6 bln)</label>
+                            <label class="choice-item"><input type="radio" name="experience" value="novice" checked> Novice (6–12 bln)</label>
+                            <label class="choice-item"><input type="radio" name="experience" value="intermediate"> Intermediate (1–2 thn)</label>
+                            <label class="choice-item"><input type="radio" name="experience" value="upper_intermediate"> Upper Intermediate (2–4 thn)</label>
+                            <label class="choice-item"><input type="radio" name="experience" value="advanced"> Advanced (4–7 thn)</label>
+                            <label class="choice-item"><input type="radio" name="experience" value="veteran"> Veteran (&gt; 7 thn)</label>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="exerciseComplexity">Preferensi Kompleksitas &amp; Persiapan Alat (menentukan pemilihan gerakan &amp; efisiensi waktu setup)</label>
+                        <select id="exerciseComplexity" name="exerciseComplexity">
+                            <option value="simple">Sederhana &amp; praktis (setup cepat, dominan mesin)</option>
+                            <option value="balanced" selected>Seimbang</option>
+                            <option value="technical">Teknis tinggi / kompleks (free weight &amp; barbell rack, dsb)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="section-block">
+                    <h3>Tujuan Spesifik Latihan (≥1)</h3>
+                    <p class="small-note">Pilih satu atau lebih tujuan spesifik Anda. Sistem akan mengklasifikasikan fokus target utama latihan secara otomatis.</p>
+                    <div class="checkbox-group">
+                        <label class="choice-item"><input type="checkbox" name="advancedTarget" value="Kebugaran Jasmani"> Kebugaran Jasmani</label>
+                        <label class="choice-item"><input type="checkbox" name="advancedTarget" value="Fat Loss"> Fat Loss (Penurunan Lemak)</label>
+                        <label class="choice-item"><input type="checkbox" name="advancedTarget" value="Ketahanan Jantung"> Ketahanan Jantung (Cardio Endurance)</label>
+                        <label class="choice-item"><input type="checkbox" name="advancedTarget" value="Panjang umur"> Panjang umur / Healthy Aging</label>
+                        <label class="choice-item"><input type="checkbox" name="advancedTarget" value="Bentuk Tubuh Ideal"> Bentuk Tubuh Ideal (Hipertrofi &amp; Estetika)</label>
+                        <label class="choice-item"><input type="checkbox" name="advancedTarget" value="Kekuatan Absolut"> Kekuatan Absolut (Strength)</label>
+                        <label class="choice-item"><input type="checkbox" name="advancedTarget" value="Performa Atletik"> Performa Atletik &amp; Power</label>
+                    </div>
+                    <div class="bmi-box" id="derivedTargetBox">
+                        <div class="bmi-header">
+                            <label>Klasifikasi Target Utama Otomatis</label>
+                            <span class="bmi-value" id="derivedTargetLabel">Pilih tujuan spesifik di atas</span>
+                        </div>
+                        <div class="bmi-status" id="derivedTargetDesc">Target utama ditentukan otomatis berdasarkan tujuan spesifik yang Anda pilih.</div>
+                    </div>
+                </div>
+
+                <div class="section-block">
+                    <h3>Fokus Bagian Tubuh Prioritas (Opsional)</h3>
+                    <p class="small-note">Opsional — biarkan kosong bila ingin porsi seluruh tubuh seimbang. Pilih bagian tubuh tertentu bila Anda ingin memberikan penekanan volume lebih (mis. ingin membesarkan Dada, Glutes, atau Bahu).</p>
+                    <div id="focusAreas" class="checkbox-group">
+                        <label class="choice-item"><input type="checkbox" name="focusArea" value="chest"> Dada (Chest)</label>
+                        <label class="choice-item"><input type="checkbox" name="focusArea" value="back"> Punggung (Back)</label>
+                        <label class="choice-item"><input type="checkbox" name="focusArea" value="shoulders"> Bahu (Shoulders)</label>
+                        <label class="choice-item"><input type="checkbox" name="focusArea" value="glutes"> Glutes</label>
+                        <label class="choice-item"><input type="checkbox" name="focusArea" value="thighs"> Paha (Quads &amp; Hamstrings)</label>
+                        <label class="choice-item"><input type="checkbox" name="focusArea" value="arms"> Lengan (Biceps &amp; Triceps)</label>
+                        <label class="choice-item"><input type="checkbox" name="focusArea" value="calves"> Betis (Calves)</label>
+                        <label class="choice-item"><input type="checkbox" name="focusArea" value="core"> Perut (Core)</label>
+                    </div>
+                </div>
+
+                <div class="section-block">
+                    <h3>Preferensi Fasilitas &amp; Modalitas Latihan</h3>
+                    <p class="small-note"><strong>Resistance Training &amp; Muscle Building</strong> adalah program inti default yang mengisi durasi sesi di atas. Anda dapat menambahkan blok <strong>Cardio</strong> dan/atau <strong>Mobility &amp; Flexibility</strong> yang dijadwalkan sebagai tambahan di luar durasi sesi inti.</p>
+                    <div class="checkbox-group">
+                        <label class="choice-item"><input type="checkbox" name="modalityResistance" value="resistance" checked disabled> Resistance Training &amp; Muscle Building</label>
+                        <label class="choice-item"><input type="checkbox" name="modality" value="cardio"> + Cardio &amp; Conditioning (10–20 menit di luar durasi sesi)</label>
+                        <label class="choice-item"><input type="checkbox" name="modality" value="mobility"> + Mobility &amp; Flexibility (8–12 menit di luar durasi sesi)</label>
+                    </div>
+                </div>
+
+                <div class="section-block">
+                    <h3>Keterbatasan Fisik</h3>
+                    <div class="choice-group inline-radio">
+                        <label class="choice-item"><input type="radio" name="physicalCondition" value="0"> Tidak ada</label>
+                        <label class="choice-item"><input type="radio" name="physicalCondition" value="1"> Ada kondisi tertentu</label>
+                    </div>
+
+                    <div class="conditional-fields" id="physicalDetails">
+                        <div class="field">
+                            <label for="limitationStory">Ceritakan yang dirasakan (pisahkan setiap keluhan dengan tanda titik <code>.</code>)</label>
+                            <textarea id="limitationStory" name="limitationStory" rows="3" placeholder="Contoh: Sakit saat menekuk pergelangan tangan. Sakit bagian betis."></textarea>
+                        </div>
+
+                        <div class="bmi-box" id="limitationPreview" hidden>
+                            <div class="bmi-header">
+                                <label>Hasil Deteksi Keluhan Otomatis</label>
+                            </div>
+                            <div class="bmi-status" id="limitationPreviewBody"></div>
+                        </div>
+                    </div>
+
+                    <p class="small-note">*Informasi ini digunakan sebagai pertimbangan keamanan dalam rekomendasi latihan dan bukan sebagai diagnosis medis. Bila keterbatasan terlalu banyak atau berisiko tinggi, sistem akan menyarankan konsultasi langsung dengan Personal Trainer atau tenaga medis.</p>
+                </div>
+
+                <button type="submit">Dapatkan Rekomendasi</button>
+            </form>
+        </section>
+
+        <section id="result" class="card result-card">
+            <h2>Status Asesmen</h2>
+            <div id="recommendationList">
+                <p class="empty">Isi asesmen untuk melihat pilihan program di Profil &amp; Akun.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>@ All Copyright 2026, Bije's Gym & Vito Boni. All Rights Reserved</p>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

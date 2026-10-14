@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Masuk atau Daftar - Bije's Gym</title>
+
+    <link rel="stylesheet" href="/static/css/brand.css">
+    <link rel="stylesheet" href="/static/css/auth.css">
+</head>
+
+<body>
+
+    <div class="auth-page">
+        <video class="auth-video" autoplay muted loop playsinline aria-hidden="true" tabindex="-1">
+            <source src="/static/media/vid/gym.mp4" type="video/mp4">
+        </video>
+
+        <aside class="auth-brand">
+            <div class="brand-mark">
+                <span class="brand-badge">Bije's Gym</span>
+            </div>
+            <p class="brand-motto">Built for the Driven</p>
+            <p class="brand-text">
+                Dapatkan rekomendasi program latihan yang sesuai dengan pengalaman, target,
+                dan kondisi fisik Anda!
+            </p>
+        </aside>
+
+        <main class="auth-panel">
+
+            <div class="auth-box">
+
+                <div class="tabs" role="tablist" aria-label="Pilih masuk atau daftar">
+                    <button type="button" class="tab active" id="tabLogin"
+                            role="tab" aria-selected="true" aria-controls="loginForm">
+                        Masuk
+                    </button>
+                    <button type="button" class="tab" id="tabRegister"
+                            role="tab" aria-selected="false" aria-controls="registerForm">
+                        Daftar
+                    </button>
+                </div>
+
+                <!-- FORM MASUK -->
+                <form id="loginForm" class="auth-form" role="tabpanel" novalidate>
+
+                    <h2>Selamat datang kembali</h2>
+                    <p class="subtitle">Masuk dengan akun member Anda.</p>
+
+                    <div class="field">
+                        <label for="loginUsername">Username</label>
+                        <input type="text" id="loginUsername" autocomplete="username"
+                               placeholder="Nama pengguna">
+                        <span class="error" id="loginUsernameError"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="loginPassword">Kata sandi</label>
+                        <div class="password-wrap">
+                            <input type="password" id="loginPassword"
+                                   autocomplete="current-password"
+                                   placeholder="Masukkan kata sandi">
+                            <button type="button" class="toggle-pw"
+                                    data-target="loginPassword">Tampilkan</button>
+                        </div>
+                        <span class="error" id="loginPasswordError"></span>
+                    </div>
+
+                    <p class="form-message" id="loginMessage" role="alert"></p>
+
+                    <button type="submit" class="submit">Masuk</button>
+
+                    <p class="switch-text">
+                        <a href="#" class="link-btn" aria-label="Lupa kata sandi">Lupa kata sandi?</a>
+                    </p>
+
+                    <p class="switch-text">
+                        Belum punya akun?
+                        <button type="button" class="link-btn" data-switch="register">Daftar sekarang</button>
+                    </p>
+
+                </form>
+
+                <!-- FORM DAFTAR -->
+                <form id="registerForm" class="auth-form" role="tabpanel" novalidate hidden>
+
+                    <h2>Buat akun member</h2>
+                    <p class="subtitle">Cukup beberapa data untuk memulai.</p>
+
+                    <div class="field">
+                        <label for="registerName">Nama Panggilan</label>
+                        <input type="text" id="registerName" autocomplete="name"
+                               placeholder="Nama Anda">
+                        <span class="error" id="registerNameError"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="registerUsername">Username</label>
+                        <input type="text" id="registerUsername" autocomplete="username"
+                               placeholder="Username Anda">
+                        <span class="error" id="registerUsernameError"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="registerPassword">Kata sandi</label>
+                        <div class="password-wrap">
+                            <input type="password" id="registerPassword"
+                                   autocomplete="new-password"
+                                   placeholder="Minimal 8 karakter">
+                            <button type="button" class="toggle-pw"
+                                    data-target="registerPassword">Tampilkan</button>
+                        </div>
+                        <span class="error" id="registerPasswordError"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="registerConfirm">Ulangi kata sandi</label>
+                        <div class="password-wrap">
+                            <input type="password" id="registerConfirm"
+                                   autocomplete="new-password"
+                                   placeholder="Ketik ulang kata sandi">
+                            <button type="button" class="toggle-pw"
+                                    data-target="registerConfirm">Tampilkan</button>
+                        </div>
+                        <span class="error" id="registerConfirmError"></span>
+                    </div>
+
+                    <p class="form-message" id="registerMessage" role="alert"></p>
+
+                    <button type="submit" class="submit">Daftar</button>
+
+                    <p class="switch-text">
+                        Sudah punya akun?
+                        <button type="button" class="link-btn" data-switch="login">Masuk</button>
+                    </p>
+
+                </form>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="/static/js/auth.js"></script>
+
+</body>
+</html>

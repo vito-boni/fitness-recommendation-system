@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bije's Gym - Personalized Fitness Recommendation</title>
+    <link rel="stylesheet" href="/static/css/brand.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand-mark">
+            <span class="brand-badge">Bije's Gym</span>
+        </div>
+        <p class="brand-motto">Built for the Driven</p>
+        <p class="page-context">Sistem Rekomendasi Program Latihan Berbasis Web</p>
+    </header>
+
+    <main>
+        <section class="card" style="text-align: center; padding: 2.5rem 1.5rem; max-width: 720px; margin: 2rem auto;">
+            <h2 style="font-size: 1.75rem; margin-bottom: 0.75rem;">Selamat Datang di Bije's Gym</h2>
+            <p style="color: var(--text-muted, #94a3b8); line-height: 1.6; margin-bottom: 2rem;">
+                Platform perancangan program latihan cerdas menggunakan metode
+                <em>Content-Based Filtering</em> dan <em>Weighted Cosine Similarity</em>.
+                Disesuaikan secara deterministik dengan komposisi tubuh, kapasitas kardiovaskular,
+                tingkat pengalaman latihan, ketersediaan alat, serta riwayat keluhan fisik Anda.
+            </p>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/auth/login" class="inline-link" style="padding: 0.75rem 1.5rem; background: var(--accent, #e11d48); color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                    Masuk / Daftar Akun
+                </a>
+                <a href="/asesmen" class="inline-link" style="padding: 0.75rem 1.5rem; background: #334155; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                    Mulai Asesmen Fisik
+                </a>
+                <a href="/dashboard" class="inline-link" style="padding: 0.75rem 1.5rem; background: #1e293b; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                    Dashboard Latihan
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>@ All Copyright 2026, Bije's Gym &amp; Vito Boni. All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Check if member is already authenticated and redirect seamlessly to dashboard
+        fetch('/api/auth/session', { credentials: 'include' })
+            .then(res => {
+                if (res.ok) {
+                    window.location.href = '/dashboard';
+                }
+            })
+            .catch(() => {});
+    </script>
+</body>
+</html>
